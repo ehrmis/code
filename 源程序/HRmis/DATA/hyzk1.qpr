@@ -1,0 +1,11 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.dwmc AS 单位, Ryzk.cjmc AS 部门, Ryzk.hyzk AS 婚姻状况,;
+  SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.dwmc, Ryzk.cjmc, Ryzk.hyzk;
+ INTO TABLE temp.dbf  

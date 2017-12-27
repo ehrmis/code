@@ -1,0 +1,8 @@
+nd1=year(date())
+@ 20 , 60 say '请输入年份:        ' FONT '宋体' , 14 size 1 , 11 , 0
+@ 20 , col()+2 get ND1 FONT '宋体' , 14 range 1900 , 9999 picture '9999'
+@ 20 , col() say '年' FONT '宋体' , 14 
+@ 23 , 70 get PD default 1 size 1.5 , 8 , 2 picture '@*HT \! \<确 认' FONT '宋体' , 12
+read 
+ND = str(ND1,4)
+clear

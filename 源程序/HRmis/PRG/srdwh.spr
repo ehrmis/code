@@ -1,0 +1,47 @@
+***************************
+* .\SRDwh.SPR
+***************************
+ PRIVATE M.CURRAREA , M.TALKSTAT , M.COMPSTAT
+ IF SET('TALK') = 'ON'
+    SET TALK OFF
+    M.TALKSTAT = 'ON'
+ ELSE 
+    M.TALKSTAT = 'OFF'
+ ENDIF 
+ M.COMPSTAT = SET('COMPATIBLE')
+ SET COMPATIBLE OFF
+ M.CURRAREA = SELECT()
+ IF  .NOT. WEXIST('_ruz0oak99')
+    DEFINE WINDOW _RUZ0OAK99 FROM INT((SROWS() - 6) / 2)  , INT((SCOLS() - 18) / 2) - 10 TO  ;
+         INT((SROWS() - 6) / 2) +7 , INT((SCOLS() - 40) / 2) +50 noFLOAT  ;
+         noCLOSE SHADOW DOUBLE COLOR 7+/2
+ ENDIF 
+ IF WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW SAME _RUZ0OAK99
+ ELSE 
+    ACTIVATE WINDOW NOSHOW _RUZ0OAK99
+ ENDIF
+@ 1 , 3 say '打印起始行:'  FONT '宋体' , 13 SIZE 1 , 31 , 0
+@ 1 , 19 get dwh FONT '宋体' , 13 range 0 , 9 picture '9'
+@ 1 , col() say '行' FONT '宋体' , 13
+@ 1 , col() say ' 每页打印:'  FONT '宋体' , 13 SIZE 1 , 31 , 0
+@ 1 , 39 get yjl FONT '宋体' , 13 range 10 , 99 picture '99'
+@ 1 , col() say '行' FONT '宋体' , 13
+@ 3 , 18 get PD default 1 size 1.5 , 8 , 2 picture '@*HT \!  \<确  定' FONT '宋体' , 12
+if  not wvisible('_ruz0oak99')
+  activate window _RUZ0OAK99
+endif
+read cycle
+FF = readkey()
+read
+if FF=12 or FF=268
+  return
+endif
+release window _RUZ0OAK99
+select (m.CURRAREA)
+if m.TALKSTAT='ON'
+  set talk on
+endif
+if m.COMPSTAT='ON'
+  set compatible on
+endif

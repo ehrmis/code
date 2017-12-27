@@ -1,0 +1,14 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: ZC2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.zcdj AS 代码, Ryzk.zcdj1 AS 技术等级, Ryzk.zc AS 职称,;
+  SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ WHERE (  Ryzk.dwdm = ( "&dwdm1" );
+   AND  Ryzk.cjdm = ( "&CJdm1" ) );
+   AND  Ryzk.bmbh = ( "&BMbh1" );
+ GROUP BY Ryzk.zcdj, Ryzk.zcdj1, Ryzk.zc;
+ INTO TABLE temp.dbf  

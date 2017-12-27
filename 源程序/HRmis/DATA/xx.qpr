@@ -1,0 +1,13 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: XX.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.cjmc AS 部门, Ryzk.bmmc AS 班组, Ryzk.xx AS 毕业学校,;
+  SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ WHERE  Ryzk.cjmc = ( "&CJ" );
+   AND  Ryzk.bmmc = ( "&BM" );
+ GROUP BY Ryzk.cjmc, Ryzk.bmmc, Ryzk.xx;
+ INTO TABLE temp.dbf  

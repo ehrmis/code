@@ -1,0 +1,7 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: GZJJ1.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+  SELECT Gzjj.cjmc AS 车间, Gzjj.bmmc AS 部门, Gzjj.ryxm AS 姓名, Gzjj.hj AS 总收入, Gzjj.pj AS 月平均, Gzjj.jjhj AS 奖金, Gzjj.jfjs AS 平均奖, Gzjj.ylbx AS 养老保险, Gzjj.ybx AS 医疗保险, Gzjj.sybx AS 失业保险, Gzjj.gjj AS 住房公积金, Gzjj.sds AS 个人所得税, Gzjj.sfje AS 实发金额 FROM gzjj WHERE Gzjj.cjmc = "&CJ" AND Gzjj.bmmc = "&BM" ORDER BY Gzjj.hj DESC
+*

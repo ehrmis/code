@@ -1,0 +1,42 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: SRXM.SPR (F1热键呼出自动居中对话框2014.11.12）
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+ PRIVATE M.CURRAREA , M.TALKSTAT , M.COMPSTAT
+ IF SET('TALK') = 'ON'
+    SET TALK OFF
+    M.TALKSTAT = 'ON'
+ ELSE 
+    M.TALKSTAT = 'OFF'
+ ENDIF 
+ M.COMPSTAT = SET('COMPATIBLE')
+ SET COMPATIBLE OFF
+ M.CURRAREA = SELECT()
+ IF  .NOT. WEXIST('_ruz0oak99')
+    DEFINE WINDOW _RUZ0OAK99 FROM INT((SROWS() - 6) / 2) , INT((SCOLS() - 38) / 2) TO  ;
+         INT((SROWS() - 6) / 2) + 7 , INT((SCOLS() - 40) / 2) + 38 NOFLOAT  ;
+         NOCLOSE SHADOW DOUBLE COLOR W+/B
+ ENDIF 
+ IF WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW SAME _RUZ0OAK99
+ ELSE 
+    ACTIVATE WINDOW NOSHOW _RUZ0OAK99
+ ENDIF 
+ @ 1 , 4 SAY '姓名或编号 ' FONT '宋体' , 13
+ @ 1 , col() GET XM DEFAULT ' ' FONT '宋体' , 13 SIZE 1 , 8 PICTURE 'xxxxxxxx'
+ @ 4 , 13 GET PD DEFAULT 1 SIZE 1.5 , 9 PICTURE '@*HT \!  \<确 定 ' FONT '宋体' , 11
+ IF  .NOT. WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW _RUZ0OAK99
+ ENDIF
+ wait window 'DOS经典模式，建议用键盘操作' 
+ READ CYCLE 
+ RELEASE WINDOW _RUZ0OAK99
+ SELECT (M.CURRAREA)
+ IF M.TALKSTAT = 'ON'
+    SET TALK ON
+ ENDIF 
+ IF M.COMPSTAT = 'ON'
+    SET COMPATIBLE ON
+ ENDIF 
+*

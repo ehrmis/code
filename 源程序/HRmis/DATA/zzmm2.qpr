@@ -1,0 +1,10 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.dwmc AS 单位, Ryzk.zzmm1 AS 政治面貌, SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.dwmc, Ryzk.zzmm1;
+ INTO TABLE temp.dbf  

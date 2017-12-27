@@ -1,0 +1,8 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RYLB2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+ SELECT RYZK.CJMC  车间 , RYZK.RYFL1  人员分类 , SUM(RYZK.A)  人数 WHERE  ;
+      RYZK.YGXZ = '01' GROUP BY RYZK.CJDM , RYZK.RYFL FROM ryzk
+*

@@ -1,0 +1,2 @@
+SELECT Ryzk.dwmc AS 单位, Ryzk.户籍, SUM(Ryzk.a) AS 人数 FROM  ryzk GROUP BY Ryzk.dwmc, Ryzk.户籍 INTO lbx1  
+第 10 行发生错误: 语法错误。

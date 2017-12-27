@@ -1,0 +1,50 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: SRND1.SPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+close all
+ PRIVATE M.CURRAREA , M.TALKSTAT , M.COMPSTAT
+ IF SET('TALK') = 'ON'
+    SET TALK OFF
+    M.TALKSTAT = 'ON'
+ ELSE 
+    M.TALKSTAT = 'OFF'
+ ENDIF 
+ M.COMPSTAT = SET('COMPATIBLE')
+ SET COMPATIBLE OFF
+ M.CURRAREA = SELECT()
+ IF  .NOT. WEXIST('_ruz0oak99')
+    DEFINE WINDOW _RUZ0OAK99 FROM INT((SROWS() - 6) / 2)  , INT((SCOLS() - 18) / 2) - 10 TO  ;
+         INT((SROWS() - 6) / 2) +7 , INT((SCOLS() - 40) / 2) +50 noFLOAT  ;
+         noCLOSE SHADOW DOUBLE COLOR 7+/2
+ ENDIF 
+ IF WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW SAME _RUZ0OAK99
+ ELSE 
+    ACTIVATE WINDOW NOSHOW _RUZ0OAK99
+ ENDIF
+ND1=year(date())
+YF1=month(date())
+close all
+ @ 1 , 10 SAY '　请输入年份:' FONT '宋体' , 13 SIZE 1 , 31 , 0
+ @ 1 , 30 GET ND1 FONT '宋体' , 13 RANGE 1900 , 9999 PICTURE '9999'
+ @ 1 , COL() SAY '年' FONT '宋体' , 13
+ @ 3 , 18 GET PD DEFAULT 1 SIZE 1.5 , 8 , 2 PICTURE '@*HT \!\<确  定' FONT '宋体' , 12
+ IF  .NOT. WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW _RUZ0OAK99
+ ENDIF 
+ wait window 'DOS经典模式，建议用键盘操作' 
+ READ CYCLE
+ ND = str(ND1,4) 
+ LY = STR(ND1,4)
+ LY1 = STR(VAL(LY) - 1,4)
+ RELEASE WINDOW _RUZ0OAK99
+ SELECT (M.CURRAREA)
+ IF M.TALKSTAT = 'ON'
+    SET TALK ON
+ ENDIF 
+ IF M.COMPSTAT = 'ON'
+    SET COMPATIBLE ON
+ ENDIF 
+CLEAR WINDOW all
+
+

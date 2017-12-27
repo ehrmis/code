@@ -1,0 +1,7 @@
+
+SELECT Ryzk.dwmc AS 单位, Ryzk.cjmc AS 部门, Ryzk.mz1 AS 民族,;
+  SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.dwmc, Ryzk.cjmc, Ryzk.mz1;
+ INTO TABLE temp.dbf  

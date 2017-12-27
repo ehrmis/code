@@ -1,0 +1,10 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*激活“查询去向”对话框中的“图形”按钮,在命令窗口执行 _GENGRAPH=“\VFP\WIZARDS\WZGRAPH.APP”*********** DO \vfp\wizards\wzgraph.app*************说明： （1）图形向导对话框中含有柱形图、折形图、圆 ...
+
+SELECT Ryzk.xb1 AS 性别, SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.xb1;
+ INTO TABLE temp.dbf  

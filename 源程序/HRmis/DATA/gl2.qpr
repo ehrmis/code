@@ -1,0 +1,11 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.xb1 AS 性别,;
+  ROUND(SUM(Ryzk.gl)/SUM(Ryzk.a),0) AS 平均工龄;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.xb1;
+ INTO TABLE temp.dbf  

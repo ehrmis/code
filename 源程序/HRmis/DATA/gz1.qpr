@@ -1,0 +1,11 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS1.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SELECT Ryzk.dwmc AS 单位, Ryzk.gz1 AS 工种, Ryzk.岗等 AS 岗位等级,;
+  SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.dwmc, Ryzk.gz1, Ryzk.岗等;
+ INTO TABLE temp.dbf  

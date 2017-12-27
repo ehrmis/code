@@ -1,0 +1,17 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: RS2.QPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+*SELECT Ryzk.xb1 AS 性别, SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.xb1
+SELECT Ryzk.dwmc AS 单位, Ryzk.xb1 AS 性别, SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.dwmc, Ryzk.xb1;
+ INTO CURSOR SYS(2015)  
+          * _GENGRATH="d:\vfp9\wizards\wzgraph.app"
+           DO (_GENGRAPH) WITH 'QUERY' 
+          *DO d:\vfp9\wizards\wzgraph.app              

@@ -1,0 +1,42 @@
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*  文件名: DHKJG.SPR <-- 本文件由 UnFoxAll 创建
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+ SET TALK OFF
+ PRIVATE M.CURRAREA , M.TALKSTAT , M.COMPSTAT
+ IF SET('TALK') = 'ON'
+    SET TALK OFF
+    M.TALKSTAT = 'ON'
+ ELSE 
+    M.TALKSTAT = 'OFF'
+ ENDIF 
+ M.COMPSTAT = SET('COMPATIBLE')
+ SET COMPATIBLE OFF
+ M.CURRAREA = SELECT()
+ IF  .NOT. WEXIST('_ruz0oak99')
+    DEFINE WINDOW _RUZ0OAK99 FROM INT((SROWS() - 6) / 2) , INT((SCOLS() - 18) / 2) TO  ;
+         INT((SROWS() - 6) / 2) + 5 , INT((SCOLS() - 40) / 2) + 55 NOFLOAT  ;
+         NOCLOSE SHADOW DOUBLE COLOR GR+/R
+ ENDIF 
+ IF WVISIBLE('_ruz0oak99')
+    ACTIVATE WINDOW SAME _RUZ0OAK99
+ ELSE 
+    ACTIVATE WINDOW NOSHOW _RUZ0OAK99
+ ENDIF 
+ @ 1 , 5 SAY '查无此人,请重输!!' FONT '宋体' , 18
+ IF  .NOT. WVISIBLE('_rvt0xayav')
+    ACTIVATE WINDOW _RUZ0OAK99
+ ENDIF 
+ wait window '按Esc键退出' 
+ READ CYCLE 
+ RELEASE WINDOW _RVT0XAYAV
+ SELECT (M.CURRAREA)
+ IF M.TALKSTAT = 'ON'
+    SET TALK ON
+ ENDIF 
+ IF M.COMPSTAT = 'ON'
+    SET COMPATIBLE ON
+ ENDIF 
+ DEACTIVATE WINDOW _RUZ0OAK99
+*

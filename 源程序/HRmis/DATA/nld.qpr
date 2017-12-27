@@ -1,0 +1,9 @@
+
+SELECT Ryzk.dwmc AS 单位, Ryzk.cjmc AS 部门, Ryzk.bmmc AS 班组,;
+  Ryzk.nld AS 工龄段;
+ FROM ;
+     RYZK;
+ WHERE (  Ryzk.dwdm = ( "&dwdm1" );
+   AND  Ryzk.cjdm = ( "&cjdm1" ) );
+   AND  Ryzk.bmbh = ( "&bmbh1" );
+ INTO TABLE temp.dbf  

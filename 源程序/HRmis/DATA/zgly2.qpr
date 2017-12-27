@@ -1,0 +1,6 @@
+
+SELECT Ryzk.cjmc AS 部门, Ryzk.zgly1 AS 员工来源, SUM(Ryzk.a) AS 人数;
+ FROM ;
+     ryzk;
+ GROUP BY Ryzk.cjmc, Ryzk.zgly1;
+ INTO TABLE temp.dbf  
